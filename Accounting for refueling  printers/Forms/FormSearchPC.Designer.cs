@@ -89,6 +89,9 @@ namespace Accounting_for_refueling__printers.Forms
             this.pC3TableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetPCTableAdapters.PC3TableAdapter();
             this.pC2TableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetPCTableAdapters.PC2TableAdapter();
             this.pC1TableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetPCTableAdapters.PC1TableAdapter();
+            this.label10 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pC1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetPC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pC2BindingSource)).BeginInit();
@@ -150,7 +153,7 @@ namespace Accounting_for_refueling__printers.Forms
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.Location = new System.Drawing.Point(310, 40);
+            this.label6.Location = new System.Drawing.Point(318, 33);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(77, 20);
             this.label6.TabIndex = 28;
@@ -218,7 +221,7 @@ namespace Accounting_for_refueling__printers.Forms
             this.comboBox1.DisplayMember = "Кабинет";
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(380, 36);
+            this.comboBox1.Location = new System.Drawing.Point(403, 30);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(137, 28);
             this.comboBox1.TabIndex = 32;
@@ -240,7 +243,7 @@ namespace Accounting_for_refueling__printers.Forms
             this.comboBox2.DisplayMember = "ФИО_МОЛ";
             this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(380, 92);
+            this.comboBox2.Location = new System.Drawing.Point(403, 92);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(137, 28);
             this.comboBox2.TabIndex = 33;
@@ -257,7 +260,7 @@ namespace Accounting_for_refueling__printers.Forms
             this.comboBox3.DisplayMember = "Инв_Номер";
             this.comboBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(380, 125);
+            this.comboBox3.Location = new System.Drawing.Point(403, 125);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(137, 28);
             this.comboBox3.TabIndex = 34;
@@ -274,7 +277,7 @@ namespace Accounting_for_refueling__printers.Forms
             this.comboBox4.DisplayMember = "Инв_Номер";
             this.comboBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(380, 158);
+            this.comboBox4.Location = new System.Drawing.Point(403, 158);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(137, 28);
             this.comboBox4.TabIndex = 35;
@@ -296,7 +299,7 @@ namespace Accounting_for_refueling__printers.Forms
             this.comboBox5.DisplayMember = "Код_производителя";
             this.comboBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(380, 191);
+            this.comboBox5.Location = new System.Drawing.Point(403, 191);
             this.comboBox5.Name = "comboBox5";
             this.comboBox5.Size = new System.Drawing.Size(137, 28);
             this.comboBox5.TabIndex = 36;
@@ -318,7 +321,7 @@ namespace Accounting_for_refueling__printers.Forms
             this.comboBox6.DisplayMember = "Название";
             this.comboBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(380, 224);
+            this.comboBox6.Location = new System.Drawing.Point(403, 224);
             this.comboBox6.Name = "comboBox6";
             this.comboBox6.Size = new System.Drawing.Size(137, 28);
             this.comboBox6.TabIndex = 37;
@@ -340,7 +343,7 @@ namespace Accounting_for_refueling__printers.Forms
             this.comboBox7.DisplayMember = "Модельный_ряд";
             this.comboBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox7.FormattingEnabled = true;
-            this.comboBox7.Location = new System.Drawing.Point(380, 257);
+            this.comboBox7.Location = new System.Drawing.Point(403, 257);
             this.comboBox7.Name = "comboBox7";
             this.comboBox7.Size = new System.Drawing.Size(137, 28);
             this.comboBox7.TabIndex = 38;
@@ -362,7 +365,7 @@ namespace Accounting_for_refueling__printers.Forms
             this.comboBox8.DisplayMember = "Код_производителя";
             this.comboBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox8.FormattingEnabled = true;
-            this.comboBox8.Location = new System.Drawing.Point(380, 290);
+            this.comboBox8.Location = new System.Drawing.Point(403, 290);
             this.comboBox8.Name = "comboBox8";
             this.comboBox8.Size = new System.Drawing.Size(137, 28);
             this.comboBox8.TabIndex = 39;
@@ -389,7 +392,7 @@ namespace Accounting_for_refueling__printers.Forms
             this.comboBox9.DisplayMember = "Код_производителя";
             this.comboBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox9.FormattingEnabled = true;
-            this.comboBox9.Location = new System.Drawing.Point(380, 323);
+            this.comboBox9.Location = new System.Drawing.Point(403, 323);
             this.comboBox9.Name = "comboBox9";
             this.comboBox9.Size = new System.Drawing.Size(137, 28);
             this.comboBox9.TabIndex = 40;
@@ -409,7 +412,7 @@ namespace Accounting_for_refueling__printers.Forms
             this.btnSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnSearch.Location = new System.Drawing.Point(380, 363);
+            this.btnSearch.Location = new System.Drawing.Point(403, 363);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(137, 46);
             this.btnSearch.TabIndex = 41;
@@ -419,6 +422,9 @@ namespace Accounting_for_refueling__printers.Forms
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.checkBox1);
+            this.panel1.Controls.Add(this.label10);
+            this.panel1.Controls.Add(this.dateTimePicker1);
             this.panel1.Controls.Add(this.btnSearch);
             this.panel1.Controls.Add(this.comboBox9);
             this.panel1.Controls.Add(this.label1);
@@ -602,6 +608,39 @@ namespace Accounting_for_refueling__printers.Forms
             // 
             this.pC1TableAdapter.ClearBeforeFill = true;
             // 
+            // label10
+            // 
+            this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label10.Location = new System.Drawing.Point(337, 67);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(48, 20);
+            this.label10.TabIndex = 43;
+            this.label10.Text = "Дата";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(403, 63);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(137, 26);
+            this.dateTimePicker1.TabIndex = 42;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.checkBox1.Location = new System.Drawing.Point(546, 64);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(141, 24);
+            this.checkBox1.TabIndex = 44;
+            this.checkBox1.Text = "С учётом даты";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
             // FormSearchPC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -698,5 +737,8 @@ namespace Accounting_for_refueling__printers.Forms
         private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnReturn;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

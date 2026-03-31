@@ -1,10 +1,11 @@
-﻿using Microsoft.Office.Interop.Excel;
-using System;
+﻿using System;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Windows.Forms;
+using DocumentFormat.OpenXml.Drawing.Charts;
+using Microsoft.Office.Interop.Excel;
 using Application = System.Windows.Forms.Application;
 using Excel = Microsoft.Office.Interop.Excel;
 
@@ -77,6 +78,7 @@ namespace Accounting_for_refueling__printers.Forms
         private void btnSearch_Click(object sender, EventArgs e)
         {
             filter = "";
+            DateTime date = DateTime.Parse(dateTimePicker1.Text);
             try
             {
                 if (comboBox1.Text != "")
@@ -115,10 +117,13 @@ namespace Accounting_for_refueling__printers.Forms
                 {
                     filter += $"RAM = (Select RAM_ID from RAM where Код_производителя =N'{comboBox9.Text}') and ";
                 }
-
+                if (checkBox1.Checked)
+                {
+                    filter += $" Дата = '{date.Year}.{date.Month}.{date.Day}' and ";
+                }
 
                 filter = filter.Remove(filter.Length - 4);
-                SqlCommand command = new SqlCommand("Select PC.PC_ID as Идентификатор,PC.Кабинет,PC.ФИО_МОЛ as 'ФИО материально ответственного лица',PC.Инв_Номер as 'Инв.номер ПК',Monitor.Инв_Номер as 'Инв.номер Монитора', " +
+                SqlCommand command = new SqlCommand("Select PC.PC_ID as Идентификатор,PC.Кабинет,PC.Дата,PC.ФИО_МОЛ as 'ФИО материально ответственного лица',PC.Инв_Номер as 'Инв.номер ПК',Monitor.Инв_Номер as 'Инв.номер Монитора', " +
                 "Storage_device.Код_производителя as 'Код производителя накопительного устройство', OC.Название As 'Операционная система'," +
            $"CPU.Модельный_ряд as 'Название процессора',GPU.Код_производителя as 'Название видеокарты',RAM.Код_производителя as 'Код производителя оперативной памяти' from PC   " +
            " JOIN OC on PC.OC = OC.OC_ID" +
@@ -130,7 +135,7 @@ namespace Accounting_for_refueling__printers.Forms
            $" where {filter}", sqlConnection);
                 if (command.ExecuteScalar() != null)
                 {
-                    SqlDataAdapter dataAdapter = new SqlDataAdapter("Select PC.PC_ID as Идентификатор,PC.Кабинет,PC.ФИО_МОЛ as 'ФИО материально ответственного лица',PC.Инв_Номер as 'Инв.номер ПК',Monitor.Инв_Номер as 'Инв.номер Монитора', " +
+                    SqlDataAdapter dataAdapter = new SqlDataAdapter("Select PC.PC_ID as Идентификатор,PC.Дата,PC.Кабинет,PC.ФИО_МОЛ as 'ФИО материально ответственного лица',PC.Инв_Номер as 'Инв.номер ПК',Monitor.Инв_Номер as 'Инв.номер Монитора', " +
                     "Storage_device.Код_производителя as 'Код производителя накопительного устройство', OC.Название As 'Операционная система'," +
                $"CPU.Модельный_ряд as 'Название процессора',GPU.Код_производителя as 'Название видеокарты',RAM.Код_производителя as 'Код производителя оперативной памяти' from PC   " +
                " JOIN OC on PC.OC = OC.OC_ID" +
