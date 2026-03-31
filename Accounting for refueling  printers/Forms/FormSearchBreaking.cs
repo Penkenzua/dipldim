@@ -64,7 +64,7 @@ namespace Accounting_for_refueling__printers.Forms
             comboBox2.Text = "";
             comboBox3.Text = "";
             comboBox4.Text = "";
-            comboBox5.Text = "";
+
             comboBox6.Text = "";
             comboBox7.Text = "";
             comboBox8.Text = "";
@@ -98,10 +98,7 @@ namespace Accounting_for_refueling__printers.Forms
                     {
                         filter += $"Инв_Номер = N'{comboBox4.Text}' and";
                     }
-                    if (comboBox5.Text != "")
-                    {
-                        filter += $"Монитор = N'{comboBox5.Text}' and ";
-                    }
+                 
                     if (comboBox6.Text != "")
                     {
                         filter += $"Диск like '{comboBox6.Text}%' and ";
@@ -130,7 +127,7 @@ namespace Accounting_for_refueling__printers.Forms
                     filter += $" Дата = '{date.Year}.{date.Month}.{date.Day}' and ";
                     filter = filter.Remove(filter.Length - 4);
 
-                    SqlDataAdapter sqlDataAdapter = new SqlDataAdapter($"Select Breaking_ID as 'Идентификатор', PC_ID as 'Идентификатор ПК', Дата,Кабинет,ФИО_МОЛ as 'ФИО материально ответственного лица', Монитор,Диск,CPU as 'Процессор',GPU as 'Видеокарта',RAM as 'Оперетивная память',Причина from Breaking where {filter}", sqlConnection);
+                    SqlDataAdapter sqlDataAdapter = new SqlDataAdapter($"Select * from ViewBreaking where {filter}", sqlConnection);
 
                     DataSet dataSet = new DataSet();
                     sqlDataAdapter.Fill(dataSet);
@@ -172,10 +169,7 @@ namespace Accounting_for_refueling__printers.Forms
                     {
                         filter += $"Инв_Номер = N'{comboBox4.Text}' and";
                     }
-                    if (comboBox5.Text != "")
-                    {
-                        filter += $"Монитор = N'{comboBox5.Text}' and ";
-                    }
+                 
                     if (comboBox6.Text != "")
                     {
                         filter += $"Диск like '{comboBox6.Text}%' and ";
@@ -205,7 +199,7 @@ namespace Accounting_for_refueling__printers.Forms
                     filter = filter.Remove(filter.Length - 4);
 
 
-                    SqlDataAdapter sqlDataAdapter = new SqlDataAdapter($"Select Breaking_ID as 'Идентификатор', PC_ID as 'Идентификатор ПК', Дата,Кабинет,ФИО_МОЛ as 'ФИО материально ответственного лица', Монитор,Диск,CPU as 'Процессор',GPU as 'Видеокарта',RAM as 'Оперетивная память',Причина from Breaking where {filter}", sqlConnection);
+                    SqlDataAdapter sqlDataAdapter = new SqlDataAdapter($"Select Breaking_ID as 'Идентификатор', PC_ID as 'Идентификатор ПК', Дата,Кабинет,ФИО_МОЛ as 'ФИО материально ответственного лица',Диск,CPU as 'Процессор',GPU as 'Видеокарта',RAM as 'Оперетивная память',Причина from Breaking where {filter}", sqlConnection);
 
                     DataSet dataSet = new DataSet();
                     sqlDataAdapter.Fill(dataSet);
@@ -242,10 +236,7 @@ namespace Accounting_for_refueling__printers.Forms
                     {
                         filter += $"Инв_Номер = N'{comboBox4.Text}' and";
                     }
-                    if (comboBox5.Text != "")
-                    {
-                        filter += $"Монитор = N'{comboBox5.Text}' and ";
-                    }
+
                     if (comboBox6.Text != "")
                     {
                         filter += $"Диск like '{comboBox6.Text}%' and ";
@@ -274,17 +265,21 @@ namespace Accounting_for_refueling__printers.Forms
                     filter += $" Дата between '{date.Year}.{date.Month}.{date.Day}' and '{date1.Year}.{date1.Month}.{date1.Day}' and ";
                     filter = filter.Remove(filter.Length - 4);
 
-                    SqlDataAdapter sqlDataAdapter = new SqlDataAdapter($"Select Breaking_ID as 'Идентификатор', PC_ID as 'Идентификатор ПК', Дата,Кабинет,ФИО_МОЛ as 'ФИО материально ответственного лица', Монитор,Диск,CPU as 'Процессор',GPU as 'Видеокарта',RAM as 'Оперативная память',Причина from Breaking where {filter}", sqlConnection);
+                    SqlDataAdapter sqlDataAdapter = new SqlDataAdapter($"Select Breaking_ID as 'Идентификатор', PC_ID as 'Идентификатор ПК', Дата,Кабинет,ФИО_МОЛ as 'ФИО материально ответственного лица',Диск,CPU as 'Процессор',GPU as 'Видеокарта',RAM as 'Оперетивная память',Причина from Breaking where {filter}", sqlConnection);
                     DataSet dataSet = new DataSet();
                     sqlDataAdapter.Fill(dataSet);
                     dataGridView1.DataSource = dataSet.Tables[0];
                     PanelSelects.Visible = false;
                     PanelDatagrid.Visible = true;
                 }
-                catch
+                catch (SqlException ex)
+                {
+                    MessageBox.Show(ex.ToString());
+
+                }
+                finally
                 {
                     MessageBox.Show("Введите хотя бы один фильтр", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
                 }
             }
         }
@@ -320,7 +315,7 @@ namespace Accounting_for_refueling__printers.Forms
             label4.ForeColor = ThemeColor.PrimaryColor;
             label5.ForeColor = ThemeColor.PrimaryColor;
             label6.ForeColor = ThemeColor.PrimaryColor;
-            label7.ForeColor = ThemeColor.PrimaryColor;
+
             label8.ForeColor = ThemeColor.PrimaryColor;
             label9.ForeColor = ThemeColor.PrimaryColor;
             label10.ForeColor = ThemeColor.PrimaryColor;
@@ -332,7 +327,7 @@ namespace Accounting_for_refueling__printers.Forms
             comboBox2.ForeColor = ThemeColor.PrimaryColor;
             comboBox3.ForeColor = ThemeColor.PrimaryColor;
             comboBox4.ForeColor = ThemeColor.PrimaryColor;
-            comboBox5.ForeColor = ThemeColor.PrimaryColor;
+
             comboBox6.ForeColor = ThemeColor.PrimaryColor;
             comboBox7.ForeColor = ThemeColor.PrimaryColor;
             comboBox8.ForeColor = ThemeColor.PrimaryColor;

@@ -66,12 +66,10 @@ namespace Accounting_for_refueling__printers.Forms
                     filter += $"Тип  = (Select CartridgeType_ID from CartridgeType where Type  = N'{comboBox3.Text}') and ";
                 }
                 filter = filter.Remove(filter.Length - 4);
-                SqlCommand command = new SqlCommand($"Select Cartridge.Cartridge_ID as 'Идентификатор', Cartridge.Производитель,Cartridge.Модель,CartridgeType.Type as 'Тип картриджа' from Cartridge" +
-                $" Join CartridgeType  on Cartridge.Тип = CartridgeType.CartridgeType_ID where {filter}", sqlConnection);
+                SqlCommand command = new SqlCommand($"Select * from ViewCartridge where { filter }", sqlConnection);
                 if (command.ExecuteScalar()!=null)
                 {
-                    SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select Cartridge.Cartridge_ID as 'Идентификатор', Cartridge.Производитель,Cartridge.Модель,CartridgeType.Type as 'Тип картриджа' from Cartridge" +
-                $" Join CartridgeType  on Cartridge.Тип = CartridgeType.CartridgeType_ID where {filter}", sqlConnection);
+                    SqlDataAdapter sqlDataAdapter = new SqlDataAdapter($"Select * from ViewCartridge where {filter}", sqlConnection);
                     DataSet dataSet = new DataSet();
                     sqlDataAdapter.Fill(dataSet);
                     dataGridView1.DataSource = dataSet.Tables[0];
@@ -112,6 +110,65 @@ namespace Accounting_for_refueling__printers.Forms
      
         }
 
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cartridge1BindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cartridge2BindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cartridgeTypeBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 
 }

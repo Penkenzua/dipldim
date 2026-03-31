@@ -35,7 +35,7 @@ namespace Accounting_for_refueling__printers.Forms
                 sqlConnection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + PathDatabase.Path + ";Integrated Security=True");
                 sqlConnection.Open();
             }
-            textBox1.Text = "";
+
             textBox2.Text = "";
             textBox3.Text = "";
             textBox4.Text = "";
@@ -51,14 +51,6 @@ namespace Accounting_for_refueling__printers.Forms
         private void btnAdd_Click(object sender, EventArgs e)
         {
 
-            if (checkBox1.Checked==true)
-            {
-                 monitor = textBox1.Text;
-            }
-            else
-            {
-             monitor = "Отсутствует";
-            }
             if (checkBox2.Checked == true)
             {
                  sd = textBox2.Text;
@@ -94,7 +86,7 @@ namespace Accounting_for_refueling__printers.Forms
 
 
             DateTime date = DateTime.Parse(dateTimePicker1.Text);
-            if (checkBox1.Checked || checkBox2.Checked || checkBox3.Checked || checkBox4.Checked || checkBox5.Checked)
+            if ( checkBox2.Checked || checkBox3.Checked || checkBox4.Checked || checkBox5.Checked)
             {
 
 
@@ -107,13 +99,12 @@ namespace Accounting_for_refueling__printers.Forms
                     SqlCommand InventNumber = new SqlCommand($"Select Инв_Номер from PC where PC_ID = {TableBreakingAttributes.IndexCell}  ", sqlConnection);
 
 
-                    SqlCommand command = new SqlCommand("INSERT INTO [BREAKING](PC_ID,Дата,Кабинет,ФИО_МОЛ,Инв_Номер,Монитор,Диск,CPU,GPU,RAM,Причина) Values (@PC_ID,@Дата,@Кабинет,@ФИО_МОЛ,@Инв_Номер,@Монитор,@Диск,@CPU,@GPU,@RAM,@Причина)", sqlConnection);
+                    SqlCommand command = new SqlCommand("INSERT INTO [BREAKING](PC_ID,Дата,Кабинет,ФИО_МОЛ,Инв_Номер,Диск,CPU,GPU,RAM,Причина) Values (@PC_ID,@Дата,@Кабинет,@ФИО_МОЛ,@Инв_Номер,@Диск,@CPU,@GPU,@RAM,@Причина)", sqlConnection);
                     command.Parameters.AddWithValue("PC_ID", TableBreakingAttributes.IndexCell);
                     command.Parameters.AddWithValue("Дата", $"{date.Month}/{date.Day}/{date.Year}");
                     command.Parameters.AddWithValue("Кабинет", SelectRoom.ExecuteScalar().ToString());
                     command.Parameters.AddWithValue("ФИО_МОЛ", FIO.ExecuteScalar().ToString());
                     command.Parameters.AddWithValue("Инв_Номер", InventNumber.ExecuteScalar().ToString());
-                    command.Parameters.AddWithValue("Монитор", monitor);
                     command.Parameters.AddWithValue("Диск", sd);
                     command.Parameters.AddWithValue("CPU", cpu);
                     command.Parameters.AddWithValue("GPU", gpu);
@@ -163,12 +154,12 @@ namespace Accounting_for_refueling__printers.Forms
         }
         private void SelectAcess()
         {
-            SqlCommand Edit1 = new SqlCommand($"Select Инв_Номер                from Monitor         where Monitor_ID =  (Select Монитор from PC where PC_ID = {TableBreakingAttributes.IndexCell})", sqlConnection);
+   
             SqlCommand Edit2 = new SqlCommand($"Select Код_производителя        from Storage_device  where SD_ID = (Select Диск from PC where PC_ID = {TableBreakingAttributes.IndexCell})", sqlConnection);
             SqlCommand Edit3 = new SqlCommand($"Select Модельный_ряд            from CPU             where CPU_ID = (Select CPU from PC where PC_ID = {TableBreakingAttributes.IndexCell})", sqlConnection);
             SqlCommand Edit4 = new SqlCommand($"Select Код_производителя    from GPU             where GPU_ID = (Select GPU from PC where PC_ID = {TableBreakingAttributes.IndexCell})", sqlConnection);
             SqlCommand Edit5 = new SqlCommand($"Select Код_производителя        from RAM             where RAM_ID = (Select RAM from PC where PC_ID = {TableBreakingAttributes.IndexCell})", sqlConnection);
-            textBox1.Text = Edit1.ExecuteScalar().ToString();
+
             textBox2.Text = Edit2.ExecuteScalar().ToString();
             textBox3.Text = Edit3.ExecuteScalar().ToString();
             textBox4.Text = Edit4.ExecuteScalar().ToString();
@@ -188,15 +179,15 @@ namespace Accounting_for_refueling__printers.Forms
             }
 
             label2.ForeColor = ThemeColor.PrimaryColor;
-            label3.ForeColor = ThemeColor.PrimaryColor;
+
             label4.ForeColor = ThemeColor.PrimaryColor;
             label6.ForeColor = ThemeColor.PrimaryColor;
             label7.ForeColor = ThemeColor.PrimaryColor;
             label8.ForeColor = ThemeColor.PrimaryColor;
             label9.ForeColor = ThemeColor.PrimaryColor;
             dateTimePicker1.CalendarForeColor = ThemeColor.PrimaryColor;
-            textBox1.ForeColor = ThemeColor.PrimaryColor;
-            checkBox1.ForeColor = ThemeColor.PrimaryColor;
+
+
             checkBox2.ForeColor = ThemeColor.PrimaryColor;
             checkBox3.ForeColor = ThemeColor.PrimaryColor;
             checkBox4.ForeColor = ThemeColor.PrimaryColor;

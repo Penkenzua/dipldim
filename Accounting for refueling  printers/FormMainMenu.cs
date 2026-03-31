@@ -162,17 +162,14 @@ namespace Accounting_for_refueling__printers
 
         public void UpdatePrinter()
         {
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select Printer.Printer_ID as Идентификатор,Printer.Дата,Printer.Кабинет,Printer.Модель as 'Модель принтера',Cartridge.Модель as 'Модель картриджа',CartridgeType.Type as 'Тип картриджа',Printer.Операции From Printer " +
-            " Join Cartridge on Printer.Картридж = Cartridge.Cartridge_ID " +
-            " Join CartridgeType on Printer.Тип_картриджа = CartridgeType.CartridgeType_ID", sqlConnection);
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select * from ViewCartridge Order by Идентификатор ASC", sqlConnection);
             DataSet dataSet = new DataSet();
             sqlDataAdapter.Fill(dataSet);
             dataGridView1.DataSource = dataSet.Tables[0];
         }
         public void UpdateCartrdige()
         {
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select Cartridge.Cartridge_ID as 'Идентификатор', Cartridge.Производитель,Cartridge.Модель,CartridgeType.Type as 'Тип картриджа' from Cartridge" +
-                " Join CartridgeType  on Cartridge.Тип = CartridgeType.CartridgeType_ID", sqlConnection);
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select * from [ViewCartridge] Order by [Идентификатор] ASC", sqlConnection);
             DataSet dataSet = new DataSet();
             sqlDataAdapter.Fill(dataSet);
             dataGridView1.DataSource = dataSet.Tables[0];
@@ -240,7 +237,7 @@ namespace Accounting_for_refueling__printers
         }
         public void UpdateBreaking()
         {
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select Breaking_ID as 'Идентификатор', PC_ID as 'Идентификатор ПК', Дата,Кабинет,ФИО_МОЛ as 'ФИО материально ответственного лица', Монитор,Диск,CPU as 'Процессор',GPU as 'Видеокарта',RAM as 'Оперетивная память',Причина from Breaking", sqlConnection);
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select * from ViewBreaking Order by Идентификатор ASC", sqlConnection);
             DataSet dataSet = new DataSet();
             sqlDataAdapter.Fill(dataSet);
             dataGridView1.DataSource = dataSet.Tables[0];

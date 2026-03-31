@@ -116,6 +116,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DatabaseDataSetCartridge.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DatabaseDataSetCartridgeType.cs">
+      <DependentUpon>DatabaseDataSetCartridgeType.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DatabaseDataSetCartridgeType.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

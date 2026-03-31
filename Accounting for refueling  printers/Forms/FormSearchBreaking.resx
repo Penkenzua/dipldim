@@ -123,14 +123,8 @@
   <metadata name="databaseDataSetBreaking.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <metadata name="databaseDataSetBreaking.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <metadata name="pC1BindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>366, 17</value>
-  </metadata>
-  <metadata name="databaseDataSetPC.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>208, 17</value>
   </metadata>
   <metadata name="databaseDataSetPC.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>208, 17</value>
@@ -147,23 +141,14 @@
   <metadata name="databaseDataSetMonitor.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>381, 95</value>
   </metadata>
-  <metadata name="databaseDataSetMonitor.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>381, 95</value>
-  </metadata>
   <metadata name="storagedevice1BindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 173</value>
   </metadata>
   <metadata name="databaseDataSetSD.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>373, 134</value>
   </metadata>
-  <metadata name="databaseDataSetSD.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>373, 134</value>
-  </metadata>
   <metadata name="cPU2BindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 212</value>
-  </metadata>
-  <metadata name="databaseDataSetCPU.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>442, 173</value>
   </metadata>
   <metadata name="databaseDataSetCPU.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>442, 173</value>
@@ -177,20 +162,20 @@
   <metadata name="databaseDataSetRAM.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>171, 251</value>
   </metadata>
-  <metadata name="databaseDataSetRAM.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>171, 251</value>
-  </metadata>
   <metadata name="gPU2BindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>263, 290</value>
+  </metadata>
+  <metadata name="databaseDataSetGPUBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 290</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnPrint.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EwAACxMBAJqcGAAAALNJREFUSEvtlNENgzAMBTMKozJCN+wIjOD6xRcKNIgS8kV7UgS25XtQVaTfwcwG
-        P0/OQLsPC3mhX4hECLdcD5EAkdi+Qbm2hWgRgciiuM18zFj7HhbFLIjSjPtViHqn0BJnfjqZBOUy5HxA
-        DckFZX/w/wP2wd8W4HuH/4Zsdyir+LjuyZsOZRUftz8E/cu/L5qbBkwxav8EazcUNtF6480xZl14oF2j
-        gZ/yJi1od0R3C1J6AXVqCLXa+eHGAAAAAElFTkSuQmCC
+        EgAACxIB0t1+/AAAAJtJREFUSEvtlFEKgCAQRD1KR+0I3bAjeIQJY411clFbf6IeBMmwbxTEED4DgAXA
+        Lt/CuQslz8wrqcjnlZCcT+ArqcjTOnPLeL5JTZDt8l+U8HwTGS52pwtkfd2sa9ADF0znL2jiKui5DT0F
+        psc1rDA9ZjCI6TGDQUyPGQxiegBEycYfLkE9iJGzFK65fQIb+09SoE7yhDS7svfdHHVqCLWGPeypAAAA
+        AElFTkSuQmCC
 </value>
   </data>
   <metadata name="pC1TableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
@@ -216,9 +201,6 @@
   </metadata>
   <metadata name="rAM1TableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>501, 251</value>
-  </metadata>
-  <metadata name="databaseDataSetGPUBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 290</value>
   </metadata>
   <metadata name="gPU2TableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>423, 290</value>

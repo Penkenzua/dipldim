@@ -48,10 +48,10 @@ namespace Accounting_for_refueling__printers.Forms
                 SqlCommand Edit1 = new SqlCommand($"Select Производитель from Cartridge where Cartridge_ID ={textBox1.Text}", sqlConnection);
                 SqlCommand Edit2 = new SqlCommand($"Select Модель from Cartridge where Cartridge_ID ={textBox1.Text}", sqlConnection);
                 SqlCommand Edit3 = new SqlCommand($"Select CartridgeType_ID from CartridgeType where Type =N'{comboBox1.Text}'", sqlConnection);
+                SqlCommand Edit4 = new SqlCommand($"Select Колличество from Cartridge where Cartridge_ID ={textBox1.Text}", sqlConnection);
                 textBox2.Text = Edit1.ExecuteScalar().ToString();
                 textBox3.Text = Edit2.ExecuteScalar().ToString();
-                comboBox1.Text = Edit3.ExecuteScalar().ToString();
-               
+                textBox4.Text = Edit4.ExecuteScalar().ToString();
 
             }
             else
@@ -60,6 +60,7 @@ namespace Accounting_for_refueling__printers.Forms
                 textBox1.Text = "";
                 textBox2.Text = "";
                 textBox3.Text = "";
+                textBox4.Text = "";
                 comboBox1.Text = "";
               
             }
@@ -69,13 +70,15 @@ namespace Accounting_for_refueling__printers.Forms
         {
             SqlCommand command = new SqlCommand($"Select Cartridge_ID from Cartridge where Cartridge_ID = {textBox1.Text}", sqlConnection);
             SqlCommand Edit1 = new SqlCommand($"Select CartridgeType_ID from CartridgeType where Type =N'{comboBox1.Text}'", sqlConnection);
-
+            Console.WriteLine(command.ExecuteScalar());
+            Console.WriteLine(Edit1.ExecuteScalar());
             if (textBox1.Text != "" && command.ExecuteScalar() != null && Edit1.ExecuteScalar()!= null)
             {
                 SqlCommand Update1 = new SqlCommand($"Update Cartridge SET " +
                     $"Производитель = N'{textBox2.Text}'," +
                     $"Модель = N'{textBox3.Text}'," +
-                    $"Тип = {Edit1.ExecuteScalar()} " +
+                    $"Тип = {Edit1.ExecuteScalar()}," +
+                    $"Колличество = {int.Parse(textBox4.Text)} " +
                     $"where Cartridge_ID = {textBox1.Text}", sqlConnection);
                 if (Update1.ExecuteNonQuery() == 1)
                 {
@@ -112,16 +115,6 @@ namespace Accounting_for_refueling__printers.Forms
             comboBox1.ForeColor = ThemeColor.PrimaryColor;
 
 
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            if (Regex.IsMatch(textBox1.Text, "[^0-9]"))
-            {
-                MessageBox.Show("Только цифры", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                textBox1.Text = textBox1.Text.Remove(textBox1.Text.Length - 1);
-                textBox1.SelectionStart = textBox1.TextLength;
-            }
         }
     }
 }
