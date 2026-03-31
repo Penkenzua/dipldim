@@ -9,6 +9,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DocumentFormat.OpenXml.Drawing.Charts;
 
 namespace Accounting_for_refueling__printers.Forms
 {
@@ -79,9 +80,10 @@ namespace Accounting_for_refueling__printers.Forms
             var cpu = CPU.ExecuteScalar().ToString();
             var gpu = GPU.ExecuteScalar().ToString();
             var ram = RAM.ExecuteScalar().ToString();
-
-            SqlCommand command = new SqlCommand("INSERT INTO [PC] (Кабинет,ФИО_МОЛ,Инв_Номер,Монитор,Диск,OC,CPU,GPU,RAM) VALUES(@Кабинет,@ФИО_МОЛ,@Инв_Номер,@Монитор,@Диск,@OC,@CPU,@GPU,@RAM)", sqlConnection);
+            DateTime date = DateTime.Parse(dateTimePicker1.Text);
+            SqlCommand command = new SqlCommand("INSERT INTO [PC] (Кабинет,Дата,ФИО_МОЛ,Инв_Номер,Монитор,Диск,OC,CPU,GPU,RAM) VALUES(@Кабинет,@Дата,@ФИО_МОЛ,@Инв_Номер,@Монитор,@Диск,@OC,@CPU,@GPU,@RAM)", sqlConnection);
             command.Parameters.AddWithValue("Кабинет", textBox1.Text);
+            command.Parameters.AddWithValue("Дата", $"{date.Month}/{date.Day}/{date.Year}");
             command.Parameters.AddWithValue("ФИО_МОЛ",textBox2.Text);
             command.Parameters.AddWithValue("Инв_Номер", textBox3.Text);
             command.Parameters.AddWithValue("Монитор", monitor);

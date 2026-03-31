@@ -72,7 +72,15 @@ namespace Accounting_for_refueling__printers.Forms
                 {
                     filter += $" Кабинет like '{textBox1.Text}%' and ";
                 }
-                    if (comboBox1.Text != "")
+                if (textBox2.Text != "")
+                {
+                    filter += $" ФИО_МОЛ like N'{textBox2.Text}%' and ";
+                }
+                if (textBox3.Text != "")
+                {
+                    filter += $" Инвентарный like '{textBox3.Text}%' and ";
+                }
+                if (comboBox1.Text != "")
                     {
                         filter += $" Printer.Модель like '{comboBox1.Text}%' and ";
 
@@ -88,17 +96,13 @@ namespace Accounting_for_refueling__printers.Forms
                     filter += $" Тип_картриджа  = (Select CartridgeType_ID  from CartridgeType where Type = N'{comboBox3.Text}') and ";
                 }
                       
-                                    if (textBox2.Text != "")
-                                    {
-                                        filter += $" Операции like N'%{textBox2.Text}%' and ";
-
-                                    }
+                                 
                 filter += $" Дата = '{date.Year}.{date.Month}.{date.Day}' and ";
                
 
                 filter = filter.Remove(filter.Length - 4);
 
-                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select Printer.Printer_ID as Идентификатор,Printer.Кабинет,Printer.Дата,Printer.Модель as 'Модель принтера',Cartridge.Модель as 'Модель картриджа',CartridgeType.Type as 'Тип картриджа',Printer.Операции From Printer " +
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select Printer.Printer_ID as Идентификатор,Printer.Кабинет,Printer.Дата,Printer.ФИО_МОЛ,Printer.Инвентарный,Printer.Модель as 'Модель принтера',Cartridge.Модель as 'Модель картриджа',CartridgeType.Type as 'Тип картриджа' From Printer " +
           " Join Cartridge on Printer.Картридж = Cartridge.Cartridge_ID " +
           " Join CartridgeType on Printer.Тип_картриджа = CartridgeType.CartridgeType_ID " +
           $" where {filter}", sqlConnection);
@@ -121,7 +125,15 @@ namespace Accounting_for_refueling__printers.Forms
                     {
                         filter += $" Кабинет like '{textBox1.Text}%' and ";
                     }
-                        if (comboBox1.Text != "")
+                    if (textBox2.Text != "")
+                    {
+                        filter += $" ФИО_МОЛ like N'{textBox2.Text}%' and ";
+                    }
+                    if (textBox3.Text != "")
+                    {
+                        filter += $" Инвентарный like '{textBox3.Text}%' and ";
+                    }
+                    if (comboBox1.Text != "")
                         {
                             filter += $" Printer.Модель like '{comboBox1.Text}%' and ";
 
@@ -137,18 +149,14 @@ namespace Accounting_for_refueling__printers.Forms
                                  filter += $" Тип_картриджа  = (Select CartridgeType_ID  from CartridgeType where Type = N'{comboBox3.Text}') and ";
                                 }
                                    
-                                        if (textBox2.Text != "")
-                                        {
-                                            filter += $" Операции like N'%{textBox2.Text}%' and ";
-
-                                        }
+                                       
 
                     filter = filter.Remove(filter.Length - 4);
-                
-                    SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select Printer.Printer_ID as Идентификатор,Printer.Кабинет,Printer.Дата,Printer.Модель as 'Модель принтера',Cartridge.Модель as 'Модель картриджа',CartridgeType.Type as 'Тип картриджа',Printer.Операции From Printer " +
-          " Join Cartridge on Printer.Картридж = Cartridge.Cartridge_ID " +
-          " Join CartridgeType on Printer.Тип_картриджа = CartridgeType.CartridgeType_ID " +
-          $" where {filter}", sqlConnection);
+
+                    SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select Printer.Printer_ID as Идентификатор,Printer.Кабинет,Printer.Дата,Printer.ФИО_МОЛ,Printer.Инвентарный,Printer.Модель as 'Модель принтера',Cartridge.Модель as 'Модель картриджа',CartridgeType.Type as 'Тип картриджа' From Printer " +
+      " Join Cartridge on Printer.Картридж = Cartridge.Cartridge_ID " +
+      " Join CartridgeType on Printer.Тип_картриджа = CartridgeType.CartridgeType_ID " +
+      $" where {filter}", sqlConnection);
                     DataSet dataSet = new DataSet();
                     sqlDataAdapter.Fill(dataSet);
                     dataGridView1.DataSource = dataSet.Tables[0];
@@ -168,7 +176,15 @@ namespace Accounting_for_refueling__printers.Forms
                 {
                     filter += $" Кабинет like '{textBox1.Text}%' and ";
                 }
-                    if (comboBox1.Text != "")
+                if (textBox2.Text != "")
+                {
+                    filter += $" ФИО_МОЛ like N'{textBox2.Text}%' and ";
+                }
+                if (textBox3.Text != "")
+                {
+                    filter += $" Инвентарный like '{textBox3.Text}%' and ";
+                }
+                if (comboBox1.Text != "")
                     {
                         filter += $" Printer.Модель like '{comboBox1.Text}%' and ";
 
@@ -184,17 +200,13 @@ namespace Accounting_for_refueling__printers.Forms
                     filter += $" Тип_картриджа  = (Select CartridgeType_ID  from CartridgeType where Type = N'{comboBox3.Text}') and ";
                 }
                 
-                                    if (textBox2.Text != "")
-                                    {
-                                        filter += $" Операции like N'%{textBox2.Text}%' and ";
-
-                                    }
+                               
                 filter += $" Дата between '{date.Year}.{date.Month}.{date.Day}' and '{date1.Year}.{date1.Month}.{date1.Day}' and ";
                 filter = filter.Remove(filter.Length - 4);
-                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select Printer.Printer_ID as Идентификатор,Printer.Кабинет,Printer.Дата,Printer.Модель as 'Модель принтера',Cartridge.Модель as 'Модель картриджа',CartridgeType.Type as 'Тип картриджа',Printer.Операции From Printer " +
-            " Join Cartridge on Printer.Картридж = Cartridge.Cartridge_ID " +
-            " Join CartridgeType on Printer.Тип_картриджа = CartridgeType.CartridgeType_ID " +
-            $" where {filter}", sqlConnection);
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select Printer.Printer_ID as Идентификатор,Printer.Кабинет,Printer.Дата,Printer.ФИО_МОЛ,Printer.Инвентарный,Printer.Модель as 'Модель принтера',Cartridge.Модель as 'Модель картриджа',CartridgeType.Type as 'Тип картриджа' From Printer " +
+     " Join Cartridge on Printer.Картридж = Cartridge.Cartridge_ID " +
+     " Join CartridgeType on Printer.Тип_картриджа = CartridgeType.CartridgeType_ID " +
+     $" where {filter}", sqlConnection);
                 DataSet dataSet = new DataSet();
                 sqlDataAdapter.Fill(dataSet);
                 dataGridView1.DataSource = dataSet.Tables[0];

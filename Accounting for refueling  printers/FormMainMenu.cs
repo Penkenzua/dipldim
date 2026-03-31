@@ -162,7 +162,7 @@ namespace Accounting_for_refueling__printers
 
         public void UpdatePrinter()
         {
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select * from ViewCartridge Order by Идентификатор ASC", sqlConnection);
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select * from [ViewPrinter] Order by [Идентификатор] ASC", sqlConnection);
             DataSet dataSet = new DataSet();
             sqlDataAdapter.Fill(dataSet);
             dataGridView1.DataSource = dataSet.Tables[0];
@@ -201,7 +201,7 @@ namespace Accounting_for_refueling__printers
         public void UpdatePC()
 
         {
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select PC.PC_ID as Идентификатор,PC.Кабинет,PC.ФИО_МОЛ as 'ФИО материально ответственного лица',PC.Инв_Номер as 'Инв.номер ПК',Monitor.Инв_Номер as 'Инв.номер монитора', " +
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select PC.PC_ID as Идентификатор,PC.Дата,PC.Кабинет,PC.ФИО_МОЛ as 'ФИО материально ответственного лица',PC.Инв_Номер as 'Инв.номер ПК',Monitor.Инв_Номер as 'Инв.номер монитора', " +
                 "Storage_device.Код_производителя as 'Код производителя накопительного устройство', OC.Название As 'Операционная система'," +
                 "CPU.Модельный_ряд as 'Название процессора',GPU.Код_производителя as 'Код производителя видеокарты',RAM.Код_производителя as 'Код производителя оперативной памяти' from PC " +
                 " JOIN OC on PC.OC = OC.OC_ID" +

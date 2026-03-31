@@ -51,17 +51,18 @@ namespace Accounting_for_refueling__printers.Forms
             SqlCommand SelectTypeCartridge = new SqlCommand($"Select Cartridge.Тип from Cartridge where Cartridge_ID = {SelectID.ExecuteScalar()}", sqlConnection);
             if (textBox1.Text != "" && command.ExecuteScalar() != null )
             {
-                if (textBox2.Text != "" && textBox3.Text != "")
+                if (textBox2.Text != "")
                 {
 
 
                     SqlCommand Update1 = new SqlCommand($"Update Printer SET " +
                         $"Дата = '{date.Month}/{date.Day}/{date.Year}'," +
                         $"Кабинет = N'{textBox2.Text}'," +
+                        $"ФИО_МОЛ = N'{textBox4.Text}'," +
+                        $"Инвентарный = N'{textBox5.Text}'," +
                         $"Модель = N'{comboBox1.Text}', " +
                         $"Картридж = {SelectID.ExecuteScalar()}," +
-                        $"Тип_картриджа = {SelectTypeCartridge.ExecuteScalar()}, " +
-                        $"Операции = N'{textBox3.Text}' " +
+                        $"Тип_картриджа = {SelectTypeCartridge.ExecuteScalar()} " +          
                         $"where Printer_ID = {textBox1.Text}", sqlConnection);
                     if (Update1.ExecuteNonQuery() == 1)
                     {
@@ -69,7 +70,7 @@ namespace Accounting_for_refueling__printers.Forms
                         FormMainMenu.SelfRef.UpdatePrinter();
                         textBox1.Text = "";
                         textBox2.Text = "";
-                        textBox3.Text = "";
+
                       
                     }
                     else
@@ -95,16 +96,19 @@ namespace Accounting_for_refueling__printers.Forms
             if (textBox1.Text != "" && command.ExecuteScalar() != null)
             {
                 SqlCommand Edit1 = new SqlCommand($"Select Кабинет from Printer where Printer_ID ={textBox1.Text}", sqlConnection);
-                SqlCommand Edit2 = new SqlCommand($"Select Операции from Printer where Printer_ID ={textBox1.Text}", sqlConnection);
+                
                 SqlCommand Edit3 = new SqlCommand($"Select Printer.Модель from Printer where Printer_ID ={textBox1.Text}", sqlConnection);
                 SqlCommand Edit4 = new SqlCommand($"Select Cartridge.Модель from Cartridge where Cartridge_ID = (Select Картридж from Printer where Printer_ID = {textBox1.Text})", sqlConnection);
-                
                 SqlCommand Edit6 = new SqlCommand($"Select Дата from Printer where Printer_ID ={textBox1.Text}", sqlConnection);
+                SqlCommand Edit7 = new SqlCommand($"Select ФИО_МОЛ from Printer where Printer_ID ={textBox1.Text}", sqlConnection);
+                SqlCommand Edit8 = new SqlCommand($"Select Инвентарный from Printer where Printer_ID ={textBox1.Text}", sqlConnection);
+
                 textBox2.Text = Edit1.ExecuteScalar().ToString();
-                textBox3.Text = Edit2.ExecuteScalar().ToString();
+            
                 comboBox1.Text = Edit3.ExecuteScalar().ToString();
                 comboBox2.Text= Edit4.ExecuteScalar().ToString();
-          
+                textBox4.Text = Edit7.ExecuteScalar().ToString();
+                textBox5.Text = Edit8.ExecuteScalar().ToString();
                 DateTime date = DateTime.Parse(Edit6.ExecuteScalar().ToString());
                 int x = Convert.ToInt32(date.Year);
                 int y = Convert.ToInt32(date.Month);
@@ -116,7 +120,7 @@ namespace Accounting_for_refueling__printers.Forms
                 MessageBox.Show("Запись таким ID не найдено", "Уведомление", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 textBox1.Text = "";
                 textBox2.Text = "";
-                textBox3.Text = "";
+
                 comboBox1.Text = "";
                 comboBox2.Text = "";
 
@@ -138,12 +142,11 @@ namespace Accounting_for_refueling__printers.Forms
             label2.ForeColor = ThemeColor.PrimaryColor;
             label3.ForeColor = ThemeColor.PrimaryColor;
             label4.ForeColor = ThemeColor.PrimaryColor;
-            label5.ForeColor = ThemeColor.PrimaryColor;
    
             label7.ForeColor = ThemeColor.PrimaryColor;
             textBox1.ForeColor = ThemeColor.PrimaryColor;
             textBox2.ForeColor = ThemeColor.PrimaryColor;
-            textBox3.ForeColor = ThemeColor.PrimaryColor;
+
             comboBox1.ForeColor = ThemeColor.PrimaryColor;
             comboBox2.ForeColor = ThemeColor.PrimaryColor;
 

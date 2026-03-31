@@ -43,18 +43,20 @@ namespace Accounting_for_refueling__printers.Forms
         {
             
            
-            if (textBox1.Text != "" && textBox2.Text != "" && comboBox1.Text != "")
+            if (textBox1.Text != ""  && comboBox1.Text != "")
             {
                 SqlCommand SelectID = new SqlCommand($"Select Cartridge_ID from Cartridge where Cartridge.Модель = N'{comboBox2.Text}'",sqlConnection);
                 SqlCommand SelectTypeCartridge = new SqlCommand($"Select Cartridge.Тип from Cartridge where Cartridge_ID = {SelectID.ExecuteScalar()}",sqlConnection);
                 DateTime date = DateTime.Parse(dateTimePicker1.Text);
-                SqlCommand command = new SqlCommand($"INSERT INTO [PRINTER](Дата,Кабинет,Модель,Картридж,Тип_картриджа,Операции) Values(@Дата,@Кабинет,@Модель,@Картридж,@Тип_картриджа,@Операции)", sqlConnection);
+                SqlCommand command = new SqlCommand($"INSERT INTO [PRINTER](Дата,Кабинет,ФИО_МОЛ,Инвентарный,Модель,Картридж,Тип_картриджа) Values(@Дата,@Кабинет,@ФИО_МОЛ,@Инвентарный,@Модель,@Картридж,@Тип_картриджа)", sqlConnection);
                 command.Parameters.AddWithValue("Дата",$"{date.Month}/{date.Day}/{date.Year}");
                 command.Parameters.AddWithValue("Кабинет",textBox1.Text);
+                command.Parameters.AddWithValue("ФИО_МОЛ", textBox2.Text);
+                command.Parameters.AddWithValue("Инвентарный", textBox3.Text);
                 command.Parameters.AddWithValue("Модель", comboBox1.Text);
                 command.Parameters.AddWithValue("Картридж",SelectID.ExecuteScalar());
                 command.Parameters.AddWithValue("Тип_картриджа",SelectTypeCartridge.ExecuteScalar());
-                command.Parameters.AddWithValue("Операции",textBox2.Text);
+
 
              
 
@@ -65,7 +67,7 @@ namespace Accounting_for_refueling__printers.Forms
 
                 }
                 textBox1.Text = "";
-                textBox2.Text = "";
+
                 comboBox1.Text = "";
             }
             else
@@ -89,9 +91,7 @@ namespace Accounting_for_refueling__printers.Forms
             label2.ForeColor = ThemeColor.PrimaryColor;
             label3.ForeColor = ThemeColor.PrimaryColor;
             label4.ForeColor = ThemeColor.PrimaryColor;
-            label5.ForeColor = ThemeColor.PrimaryColor;
             textBox1.ForeColor = ThemeColor.PrimaryColor;
-            textBox2.ForeColor = ThemeColor.PrimaryColor;
             comboBox1.ForeColor = ThemeColor.PrimaryColor;
         }
 
