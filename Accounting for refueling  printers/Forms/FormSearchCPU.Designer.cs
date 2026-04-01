@@ -57,13 +57,13 @@ namespace Accounting_for_refueling__printers.Forms
             this.cPU1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnSearch = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.cPU1TableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetCPUTableAdapters.CPU1TableAdapter();
             this.cPU2TableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetCPUTableAdapters.CPU2TableAdapter();
             this.cPU3TableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetCPUTableAdapters.CPU3TableAdapter();
             this.cPU4TableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetCPUTableAdapters.CPU4TableAdapter();
             this.cPU5TableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetCPUTableAdapters.CPU5TableAdapter();
             this.cPU6TableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetCPUTableAdapters.CPU6TableAdapter();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cPU6BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetCPU)).BeginInit();
@@ -102,11 +102,11 @@ namespace Accounting_for_refueling__printers.Forms
             this.comboBox6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBox6.DataSource = this.cPU6BindingSource;
             this.comboBox6.DisplayMember = "Частота";
-            this.comboBox6.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comboBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(338, 265);
+            this.comboBox6.Location = new System.Drawing.Point(356, 269);
             this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(158, 27);
+            this.comboBox6.Size = new System.Drawing.Size(158, 28);
             this.comboBox6.TabIndex = 26;
             this.comboBox6.TextChanged += new System.EventHandler(this.comboBox6_TextChanged);
             // 
@@ -125,11 +125,11 @@ namespace Accounting_for_refueling__printers.Forms
             this.comboBox5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBox5.DataSource = this.cPU5BindingSource;
             this.comboBox5.DisplayMember = "Кол_потоков";
-            this.comboBox5.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comboBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(338, 232);
+            this.comboBox5.Location = new System.Drawing.Point(356, 236);
             this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(158, 27);
+            this.comboBox5.Size = new System.Drawing.Size(158, 28);
             this.comboBox5.TabIndex = 25;
             // 
             // cPU5BindingSource
@@ -142,11 +142,11 @@ namespace Accounting_for_refueling__printers.Forms
             this.comboBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBox4.DataSource = this.cPU4BindingSource;
             this.comboBox4.DisplayMember = "Количество_ядер";
-            this.comboBox4.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comboBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(338, 199);
+            this.comboBox4.Location = new System.Drawing.Point(356, 203);
             this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(158, 27);
+            this.comboBox4.Size = new System.Drawing.Size(158, 28);
             this.comboBox4.TabIndex = 24;
             // 
             // cPU4BindingSource
@@ -159,11 +159,11 @@ namespace Accounting_for_refueling__printers.Forms
             this.comboBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBox3.DataSource = this.cPU3BindingSource;
             this.comboBox3.DisplayMember = "Сокет";
-            this.comboBox3.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comboBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(338, 166);
+            this.comboBox3.Location = new System.Drawing.Point(356, 170);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(158, 27);
+            this.comboBox3.Size = new System.Drawing.Size(158, 28);
             this.comboBox3.TabIndex = 23;
             // 
             // cPU3BindingSource
@@ -175,10 +175,10 @@ namespace Accounting_for_refueling__printers.Forms
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label6.Location = new System.Drawing.Point(264, 268);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(68, 19);
+            this.label6.Size = new System.Drawing.Size(78, 20);
             this.label6.TabIndex = 21;
             this.label6.Text = "Частота:";
             // 
@@ -186,10 +186,10 @@ namespace Accounting_for_refueling__printers.Forms
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.Location = new System.Drawing.Point(215, 233);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(119, 19);
+            this.label5.Size = new System.Drawing.Size(131, 20);
             this.label5.TabIndex = 22;
             this.label5.Text = "Кол-во потоков:";
             // 
@@ -197,10 +197,10 @@ namespace Accounting_for_refueling__printers.Forms
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.Location = new System.Drawing.Point(208, 200);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(127, 19);
+            this.label3.Size = new System.Drawing.Size(146, 20);
             this.label3.TabIndex = 20;
             this.label3.Text = "Количество ядер:";
             // 
@@ -208,10 +208,10 @@ namespace Accounting_for_refueling__printers.Forms
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.Location = new System.Drawing.Point(280, 169);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 19);
+            this.label4.Size = new System.Drawing.Size(59, 20);
             this.label4.TabIndex = 19;
             this.label4.Text = "Сокет:";
             // 
@@ -219,10 +219,10 @@ namespace Accounting_for_refueling__printers.Forms
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.Location = new System.Drawing.Point(215, 134);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(121, 19);
+            this.label2.Size = new System.Drawing.Size(136, 20);
             this.label2.TabIndex = 18;
             this.label2.Text = "Модельный ряд:";
             // 
@@ -230,10 +230,10 @@ namespace Accounting_for_refueling__printers.Forms
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(215, 105);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(118, 19);
+            this.label1.Size = new System.Drawing.Size(135, 20);
             this.label1.TabIndex = 17;
             this.label1.Text = "Производитель:";
             // 
@@ -242,11 +242,11 @@ namespace Accounting_for_refueling__printers.Forms
             this.comboBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBox2.DataSource = this.cPU2BindingSource;
             this.comboBox2.DisplayMember = "Модельный_ряд";
-            this.comboBox2.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(338, 133);
+            this.comboBox2.Location = new System.Drawing.Point(356, 137);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(158, 27);
+            this.comboBox2.Size = new System.Drawing.Size(158, 28);
             this.comboBox2.TabIndex = 9;
             // 
             // cPU2BindingSource
@@ -259,11 +259,11 @@ namespace Accounting_for_refueling__printers.Forms
             this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBox1.DataSource = this.cPU1BindingSource;
             this.comboBox1.DisplayMember = "Производитель";
-            this.comboBox1.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(338, 100);
+            this.comboBox1.Location = new System.Drawing.Point(356, 104);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(158, 27);
+            this.comboBox1.Size = new System.Drawing.Size(158, 28);
             this.comboBox1.TabIndex = 6;
             // 
             // cPU1BindingSource
@@ -275,8 +275,8 @@ namespace Accounting_for_refueling__printers.Forms
             // 
             this.btnSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnSearch.Location = new System.Drawing.Point(338, 304);
+            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnSearch.Location = new System.Drawing.Point(356, 308);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(158, 43);
             this.btnSearch.TabIndex = 7;
@@ -294,30 +294,6 @@ namespace Accounting_for_refueling__printers.Forms
             this.panel2.TabIndex = 0;
             this.panel2.Visible = false;
             // 
-            // cPU1TableAdapter
-            // 
-            this.cPU1TableAdapter.ClearBeforeFill = true;
-            // 
-            // cPU2TableAdapter
-            // 
-            this.cPU2TableAdapter.ClearBeforeFill = true;
-            // 
-            // cPU3TableAdapter
-            // 
-            this.cPU3TableAdapter.ClearBeforeFill = true;
-            // 
-            // cPU4TableAdapter
-            // 
-            this.cPU4TableAdapter.ClearBeforeFill = true;
-            // 
-            // cPU5TableAdapter
-            // 
-            this.cPU5TableAdapter.ClearBeforeFill = true;
-            // 
-            // cPU6TableAdapter
-            // 
-            this.cPU6TableAdapter.ClearBeforeFill = true;
-            // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
@@ -332,7 +308,7 @@ namespace Accounting_for_refueling__printers.Forms
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Roboto Bk", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
@@ -370,6 +346,30 @@ namespace Accounting_for_refueling__printers.Forms
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(800, 450);
             this.dataGridView1.TabIndex = 1;
+            // 
+            // cPU1TableAdapter
+            // 
+            this.cPU1TableAdapter.ClearBeforeFill = true;
+            // 
+            // cPU2TableAdapter
+            // 
+            this.cPU2TableAdapter.ClearBeforeFill = true;
+            // 
+            // cPU3TableAdapter
+            // 
+            this.cPU3TableAdapter.ClearBeforeFill = true;
+            // 
+            // cPU4TableAdapter
+            // 
+            this.cPU4TableAdapter.ClearBeforeFill = true;
+            // 
+            // cPU5TableAdapter
+            // 
+            this.cPU5TableAdapter.ClearBeforeFill = true;
+            // 
+            // cPU6TableAdapter
+            // 
+            this.cPU6TableAdapter.ClearBeforeFill = true;
             // 
             // FormSearchCPU
             // 
