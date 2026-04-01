@@ -9,6 +9,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DocumentFormat.OpenXml.Drawing.Charts;
 
 namespace Accounting_for_refueling__printers.Forms
 {
@@ -77,6 +78,8 @@ namespace Accounting_for_refueling__printers.Forms
                 SqlCommand Edit7 = new SqlCommand($"Select Модельный_ряд            from CPU             where CPU_ID = (Select CPU from PC where PC_ID = {textBox1.Text})", sqlConnection);
                 SqlCommand Edit8 = new SqlCommand($"Select Код_производителя        from GPU             where GPU_ID = (Select GPU from PC where PC_ID = {textBox1.Text})", sqlConnection);
                 SqlCommand Edit9 = new SqlCommand($"Select Код_производителя        from RAM             where RAM_ID = (Select RAM from PC where PC_ID = {textBox1.Text})", sqlConnection);
+                SqlCommand Edit10 = new SqlCommand($"Select Дата from PC where PC_ID ={textBox1.Text}", sqlConnection);
+
                 textBox2.Text = Edit1.ExecuteScalar().ToString();
                 textBox3.Text = Edit2.ExecuteScalar().ToString();
                 textBox4.Text = Edit3.ExecuteScalar().ToString();
@@ -86,7 +89,11 @@ namespace Accounting_for_refueling__printers.Forms
                 comboBox4.Text = Edit7.ExecuteScalar().ToString();
                 comboBox5.Text = Edit8.ExecuteScalar().ToString();
                 comboBox6.Text = Edit9.ExecuteScalar().ToString();
-
+                DateTime date = DateTime.Parse(Edit10.ExecuteScalar().ToString());
+                int x = Convert.ToInt32(date.Year);
+                int y = Convert.ToInt32(date.Month);
+                int z = Convert.ToInt32(date.Day);
+                dateTimePicker1.Value = new DateTime(x, y, z);
             }
             else
             {
@@ -98,12 +105,12 @@ namespace Accounting_for_refueling__printers.Forms
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-
+            DateTime date = DateTime.Parse(dateTimePicker1.Text);
             SqlCommand Monitor = new SqlCommand($"Select Monitor_Id from Monitor where Инв_Номер=N'{comboBox1.Text}'", sqlConnection);
             SqlCommand SD = new SqlCommand($"Select SD_ID from Storage_device where Код_производителя=N'{comboBox2.Text}'", sqlConnection);
             SqlCommand OC = new SqlCommand($"Select OC_ID from OC where Название=N'{comboBox3.Text}'", sqlConnection);
             SqlCommand CPU = new SqlCommand($"Select CPU_ID from CPU where Модельный_ряд=N'{comboBox4.Text}'", sqlConnection);
-            SqlCommand GPU = new SqlCommand($"Select GPU_ID from GPU where Графический_процессор=N'{comboBox5.Text}'", sqlConnection);
+            SqlCommand GPU = new SqlCommand($"Select GPU_ID from GPU where Код_производителя=N'{comboBox5.Text}'", sqlConnection);
             SqlCommand RAM = new SqlCommand($"Select RAM_ID from RAM where Код_производителя=N'{comboBox6.Text}'", sqlConnection);
             
             SqlCommand command = new SqlCommand($"Select PC_ID from PC where PC_ID = {textBox1.Text}", sqlConnection);
@@ -111,6 +118,7 @@ namespace Accounting_for_refueling__printers.Forms
             {
                 SqlCommand Update1 = new SqlCommand($"Update PC SET " +
                     $"Кабинет = {textBox2.Text}," +
+                    $"Дата = '{date.Month}/{date.Day}/{date.Year}'," +
                     $"ФИО_МОЛ = N'{textBox3.Text}', " +
                     $"Инв_Номер = {textBox4.Text}," +
                     $"Монитор = {Monitor.ExecuteScalar()}," +

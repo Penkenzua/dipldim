@@ -427,11 +427,11 @@ namespace Accounting_for_refueling__printers.Forms
             this.label11.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label11.Location = new System.Drawing.Point(294, 98);
+            this.label11.Location = new System.Drawing.Point(313, 90);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(48, 20);
+            this.label11.Size = new System.Drawing.Size(52, 20);
             this.label11.TabIndex = 46;
-            this.label11.Text = "Дата";
+            this.label11.Text = "Дата:";
             // 
             // dateTimePicker1
             // 
