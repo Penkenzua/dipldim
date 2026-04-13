@@ -86,8 +86,7 @@ namespace Accounting_for_refueling__printers.Forms
 
 
             DateTime date = DateTime.Parse(dateTimePicker1.Text);
-            if ( checkBox2.Checked || checkBox3.Checked || checkBox4.Checked || checkBox5.Checked)
-            {
+           
 
 
                 try
@@ -146,12 +145,8 @@ namespace Accounting_for_refueling__printers.Forms
                 }
                 
             }
-            else
-                {
-                    MessageBox.Show("Выберите хотя бы одну поломку", "Предуприждение", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-                }
-        }
+           
+        
         private void SelectAcess()
         {
    
