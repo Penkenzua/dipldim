@@ -65,7 +65,9 @@ namespace Accounting_for_refueling__printers
                 //1
 
                 //2
-               
+                Console.WriteLine(Hashing.Hash(PasswordUser));
+
+
 
 
                 if (AuthorizeUser(textLogin.Text, textPassword.Text))
