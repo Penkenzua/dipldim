@@ -507,7 +507,7 @@ namespace Accounting_for_refueling__printers
             dataGridView1.ClearSelection();
             try
             {
-                sqlConnection = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename =" + Application.StartupPath + @"\Database.mdf; Integrated Security = True");
+                sqlConnection = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename =" + Application.StartupPath + @"\Database.mdf; Integrated Security = True;Connect Timeout=60");
                 sqlConnection.Open();
             }
             catch (Exception)
@@ -523,7 +523,7 @@ namespace Accounting_for_refueling__printers
                         {
                             PathDatabase.Path = openFileDialog.FileName;
                         }
-                        sqlConnection = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename =" + PathDatabase.Path + " Integrated Security = True");
+                        sqlConnection = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename =" + PathDatabase.Path + " Integrated Security = True;Connect Timeout=60");
                         sqlConnection.Open();
                     }
             }
